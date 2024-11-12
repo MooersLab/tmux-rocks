@@ -1,4 +1,4 @@
-tmux is easier than it looks
+# tmux is easier than it looks
 
 Tmux is a terminal emulator on steroids.
 It is good for impressing your colleagues.
