@@ -18,7 +18,7 @@ I think that a very attractive feature is that it is highly programmable using B
 I can see how being able to split a terminal horizontally and vertically into several panes can be very useful when carrying out work on a remote computer.
 In one pane you could be monitoring running jobs while another pane you could be editing a script file to prepare the next job or an unrelated job.
 
-Watch this 3-minute video (https://www.youtube.com/watch?v=vtB1J_zCv8I)[video] to understand what is possible.
+Watch this 3-minute video [https://www.youtube.com/watch?v=vtB1J_zCv8I](video) to understand what is possible.
 The pace is adequate to get a fairly full picture of what is possible
 I used Copilot to explore the basics.
 I made this cheat sheet after learning about its features because I want to use it in the future.
