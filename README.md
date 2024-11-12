@@ -1,3 +1,7 @@
+![Version](https://img.shields.io/static/v1?label=tmux-rocks&message=0.2&color=brightcolor)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+
 # tmux is easier than it looks
 
 Tmux is a terminal emulator on steroids.
@@ -87,3 +91,19 @@ This makes navigation in the terminal faster than using the Finder.
 
 There are books about tmux, but this cheat sheet is a faster way to get started.
 Your computer use will be transformed in an hour.
+There will be no going back to a plain old terminal.
+
+|Version       |Changes                                                                                               |Date                  |
+|:-------------|:-----------------------------------------------------------------------------------------------------|:--------------------:|
+| Version 0.1  | Initiate project. Added badges, funding, and update table.                                           | 2024 November 12    |
+
+
+## Sources of funding
+
+- NIH: R01 CA242845
+- NIH: R01 AI088011
+- NIH: P30 CA225520 (PI: R. Mannel)
+- NIH: P20 GM103640 and P30 GM145423 (PI: A. West)
+
+
+
