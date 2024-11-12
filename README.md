@@ -7,6 +7,8 @@
 Tmux is a terminal emulator on steroids.
 It is good for impressing your colleagues.
 
+<img width="1711" alt="Screenshot 2024-11-12 at 4 42 51 AM" src="https://github.com/user-attachments/assets/c1bda3ed-2f25-4d84-9256-704d519afc79">
+
 Although iterm2 is highly customizable, tmux is a step beyond what you can do with iterm2.
 It enables you to create multiple panes in a single terminal tab.
 It also supports easy navigation between multiple terminal tabs.
