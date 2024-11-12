@@ -5,7 +5,7 @@
 # tmux is easier than it looks
 
 Tmux is a terminal emulator on steroids.
-It would be good for giving the illusion that you know something about computers.
+It gives the illusion that you know something about computers.
 
 <img width="1711" alt="Screenshot 2024-11-12 at 4 42 51 AM" src="https://github.com/user-attachments/assets/c1bda3ed-2f25-4d84-9256-704d519afc79">
 
