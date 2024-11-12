@@ -41,7 +41,7 @@ To kill a pane, enter Ctrl + B and then X.
 To kill a window, enter Ctrl + B and then &. 
 
 To rename a window, enter Ctrl +B and comma.
-To rename a pane, enter    printf '\033]2;%s\033\\' "My Pane"
+To rename a pane, enter `printf '\033]2;%s\033\\' "My Pane"`
 I made this into a bash function that takes the pane name as an argument.
 This bash function works (easy-peasy):
 
