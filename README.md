@@ -12,7 +12,6 @@ It gives the illusion that you know something about computers.
 Although iterm2 is highly customizable, tmux is a step beyond what you can do with iterm2.
 It enables you to create multiple panes in a single terminal tab.
 It also supports easy navigation between multiple terminal tabs.
-
 I think that a very attractive feature is that it is highly programmable using Bash.
 
 I can see how being able to split a terminal horizontally and vertically into several panes can be very useful when carrying out work on a remote computer.
@@ -23,22 +22,35 @@ The pace is adequate to get a fairly full picture of what is possible
 I used Copilot to explore the basics.
 I made this cheat sheet after learning about its features because I want to use it in the future.
 
-Start a tmux session by entering tmux at the prompt in the terminal.
-You enter Ctrl + B to open up a new tmux window.
+## Installation
+
+1. Download the tmux.conf file.
+2. Store in home directory as a hidden file.
+3. Activate it by entring `tmux source-file ~/.tmux.conf`.
+
+
+
+## Cheat sheet
+Start a tmux session by entering `tmux` at the prompt in the terminal.
+The prefix key by default is Crtl +  B. This is not Emacs friendly.
+In the configuration above, I remapped this C-z because I rarely use it in Emacs.
+
+You enter Ctrl + z c to open up a new tmux window.
 The windows are numbered 0 onward.
 The numbered sessions are shown in a panel at the bottom of the terminal.
 
-To navigate to a specific terminal, enter Ctrl + B and then the terminal number.
-To navigate to the next terminal, enter Ctrl + B and N.
-To navigate to the previous terminal, enter Ctrl + B and P.
+To navigate to a specific terminal, enter Ctrl + z and then the terminal number.
+To navigate to the next terminal, enter Ctrl + z and N.
+To navigate to the previous terminal, enter Ctrl + z and P.
+The above configuration also enables the use do Shift + right or left arrow to move between windows.
 
 A given terminal window can be split into panels.
 Each panel is like an independent terminal session but not numbered.
-To split the terminal vertically, enter Ctrl + B and then %.
-To split the terminal horizontally, enter Ctrl + B and then ".
+To split the terminal vertically, enter Ctrl + z and then %.
+To split the terminal horizontally, enter Ctrl + z and then ".
 
-To kill a pane, enter Ctrl + B and then X. 
-To kill a window, enter Ctrl + B and then &. 
+To kill a pane, enter Ctrl + z and then X. 
+To kill a window, enter Ctrl + z and then &. 
 
 To rename a window, enter Ctrl +B and comma.
 To rename a pane, enter `printf '\033]2;%s\033\\' "My Pane"`
@@ -101,7 +113,7 @@ There will be no going back to a plain old terminal.
 |Version       |Changes                                                                                               |Date                  |
 |:-------------|:-----------------------------------------------------------------------------------------------------|:--------------------:|
 | Version 0.1  | Initiate project. Added badges, funding, and update table.                                           | 2024 November 12    |
-
+| Version 0.2  | Added tmux.conf. Change the prefix key binding.                                          | 2024 November 13    |
 
 ## Sources of funding
 
