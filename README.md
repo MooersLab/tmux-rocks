@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/static/v1?label=tmux-rocks&message=0.1&color=brightcolor)
+![Version](https://img.shields.io/static/v1?label=tmux-rocks&message=0.2&color=brightcolor)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 
@@ -22,15 +22,24 @@ The pace is adequate to get a fairly full picture of what is possible
 I used Copilot to explore the basics.
 I made this cheat sheet after learning about its features because I want to use it in the future.
 
+## Editor integration
+
+The terminal-based ecitors nano, neovim and terminal (emacs -nw) GNU Emacs have packages that support moving from the editor to other panes in a tmux window.
+
+
 ## Installation
 
 1. Download the tmux.conf file.
 2. Store in home directory as a hidden file.
-3. Activate it by entring `tmux source-file ~/.tmux.conf`.
+3. Install the tmux plugin manager.
+4. brew install reattach-to-user-namespace
+5. Activate it by entring `tmux source-file ~/.tmux.conf`.
+
 
 
 
 ## Cheat sheet
+
 Start a tmux session by entering `tmux` at the prompt in the terminal.
 The prefix key by default is Crtl +  B. This is not Emacs friendly.
 In the configuration above, I remapped this C-z because I rarely use it in Emacs.
