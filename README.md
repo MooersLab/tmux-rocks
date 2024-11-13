@@ -4,15 +4,14 @@
 
 # tmux is easier than it looks
 
-Tmux is a terminal emulator on steroids.
-It gives the illusion that you know something about computers.
+Tmux is a terminal mutliplexer.
+It supports easier navigation between windows and enables splitting a window into multiple panes.
+It supports the foolish pursuit of multi-tasking.
+Your multipaned terminal window gives on-lookers the illusion that you know something about computers.
+I think that a very attractive feature is that it is highly programmable using Bash.
+
 
 <img width="1711" alt="Screenshot 2024-11-12 at 4 42 51 AM" src="https://github.com/user-attachments/assets/c1bda3ed-2f25-4d84-9256-704d519afc79">
-
-Although iterm2 is highly customizable, tmux is a step beyond what you can do with iterm2.
-It enables you to create multiple panes in a single terminal tab.
-It also supports easy navigation between multiple terminal tabs.
-I think that a very attractive feature is that it is highly programmable using Bash.
 
 I can see how being able to split a terminal horizontally and vertically into several panes can be very useful when carrying out work on a remote computer.
 In one pane you could be monitoring running jobs while another pane you could be editing a script file to prepare the next job or an unrelated job.
@@ -24,19 +23,24 @@ I made this cheat sheet after learning about its features because I want to use 
 
 ## Editor integration
 
-The terminal-based ecitors nano, neovim and terminal (emacs -nw) GNU Emacs have packages that support moving from the editor to other panes in a tmux window.
+The terminal-based ecitors nano, neovim and terminal (emacs -nw) GNU Emacs have packages that support moving from the editor in one pane to other panes in a tmux window.
+
+## Requirements
+
+- git
+- package manager like homebrew
+
 
 
 ## Installation
 
 1. Download the tmux.conf file.
-2. Store in home directory as a hidden file.
-3. Install the tmux plugin manager.
-4. brew install reattach-to-user-namespace
+2. Store in home directory as a hidden file: `~/.tmux.conf`
+3. Install the tmux plugin manager: `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+4. `brew install reattach-to-user-namespace`
 5. Activate it by entring `tmux source-file ~/.tmux.conf`.
-
-
-
+6. Enter `tmux`  to start.
+7. Enter `C-z c` several times to create several new windows. Note the numbered windows in the status bar at the bottom. You can click on a number to switch to the corresponding window.
 
 ## Cheat sheet
 
