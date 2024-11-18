@@ -34,45 +34,54 @@ The terminal-based ecitors nano, neovim and terminal (emacs -nw) GNU Emacs have 
 
 ## Installation
 
+0. If tmux is not installed already, install it with a package manager. It is available in homebrew and Macports on macOS.
 1. Download the tmux.conf file.
-2. Store in home directory as a hidden file: `~/.tmux.conf`
+2. Store in the home directory as a hidden file: `~/.tmux.conf`
 3. Install the tmux plugin manager: `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 4. `brew install reattach-to-user-namespace`
-5. Activate it by entring `tmux source-file ~/.tmux.conf`.
+5. Activate it by entering `tmux source-file ~/.tmux.conf`.
 6. Enter `tmux`  to start.
-7. Enter `C-z c` several times to create several new windows. Note the numbered windows in the status bar at the bottom. You can click on a number to switch to the corresponding window.
+7. Enter `C-z c` several times to create new windows. Note the numbered windows in the status bar at the bottom. You can click on a number to switch to the corresponding window.
 
-## Cheat sheet
+## The hierarchy: sessions, windows, and panes.
+
+1. *Sessions* are at the same level as a terminal session. Each tab in iterm2 could be mapped to a different session. 
+2. A *Window* corresponds a terminal window or a single tab. Windows are numbered and can be renamed.
+3. A *pane* corresponds to the panes of a split window. Panes can also be named. The terminal sessions in each pane are independent.
+
+## Cheatsheet
 
 Start a tmux session by entering `tmux` at the prompt in the terminal.
-The prefix key by default is Crtl +  B. This is not Emacs friendly.
-In the configuration above, I remapped this C-z because I rarely use it in Emacs.
+
+The prefix key, by default, is Crtl + B. This is not Emacs friendly.
+I remapped this C-z in the configuration above because I rarely use it in Emacs.
 
 You enter Ctrl + z c to open up a new tmux window.
 The windows are numbered 0 onward.
 The numbered sessions are shown in a panel at the bottom of the terminal.
 
-To navigate to a specific terminal, enter Ctrl + z and then the terminal number.
-To navigate to the next terminal, enter Ctrl + z and N.
-To navigate to the previous terminal, enter Ctrl + z and P.
-The above configuration also enables the use do Shift + right or left arrow to move between windows.
+To navigate to a specific terminal, enter `Ctrl + z` and then the terminal number.
+To navigate to the next terminal, enter `Ctrl + z` and `n`.
+To navigate to the previous terminal, enter `Ctrl + z` and `p`.
+
+The above configuration enables the Shift key + right or left arrow to move between sessions.
 
 A given terminal window can be split into panels.
 Each panel is like an independent terminal session but not numbered.
 To split the terminal vertically, enter Ctrl + z and then %.
 To split the terminal horizontally, enter Ctrl + z and then ".
 
-To kill a pane, enter Ctrl + z and then X. 
-To kill a window, enter Ctrl + z and then &. 
+To kill a pane, enter `Ctrl + z` and then `x`. 
+To kill a window, enter `Ctrl + z` and then `&`. 
 
-To rename a window, enter Ctrl +B and comma.
+To rename a window, enter `Ctrl + z` and comma.
 To rename a pane, enter `printf '\033]2;%s\033\\' "My Pane"`
 I made this into a bash function that takes the pane name as an argument.
 This bash function works (easy-peasy):
 
 ```bash
 function namePane {
-echo "Name a tmux pane. Takes the name as a string in double-quotes."
+echo "Name a tmux pane. Takes the name as a string in double quotes."
 if [ $# -lt 1 ]; then
   echo 1>&2 "$0: not enough arguments"
   echo 'Usage1: namePane "My Pane"'
@@ -126,7 +135,7 @@ There will be no going back to a plain old terminal.
 |Version       |Changes                                                                                               |Date                  |
 |:-------------|:-----------------------------------------------------------------------------------------------------|:--------------------:|
 | Version 0.1  | Initiate project. Added badges, funding, and update table.                                           | 2024 November 12    |
-| Version 0.2  | Added tmux.conf. Change the prefix key binding.                                          | 2024 November 13    |
+| Version 0.2  | Added tmux.conf. Change the prefix key binding.                                                      | 2024 November 13    |
 
 ## Sources of funding
 
