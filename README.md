@@ -5,25 +5,25 @@
 # tmux is easier than it looks
 
 Tmux is a terminal mutliplexer.
-It supports easier navigation between windows and enables splitting a window into multiple panes.
+It supports easier navigation between windows and splits a window into multiple panes.
 It supports the foolish pursuit of multi-tasking.
 Your multipaned terminal window gives on-lookers the illusion that you know something about computers.
-I think that a very attractive feature is that it is highly programmable using Bash.
+A very attractive feature is that it is highly programmable using Bash.
 
 
 <img width="1711" alt="Screenshot 2024-11-12 at 4 42 51 AM" src="https://github.com/user-attachments/assets/c1bda3ed-2f25-4d84-9256-704d519afc79">
 
-I can see how being able to split a terminal horizontally and vertically into several panes can be very useful when carrying out work on a remote computer.
-In one pane you could be monitoring running jobs while another pane you could be editing a script file to prepare the next job or an unrelated job.
+I can see how splitting a terminal horizontally and vertically into several panes can be very useful when working on a remote computer.
+In one pane, you could monitor running jobs, while in another, you could edit a script file to prepare the next job or an unrelated job.
 
 Watch this 3-minute video [video](https://www.youtube.com/watch?v=vtB1J_zCv8I) to understand what is possible.
-The pace is adequate to get a fairly full picture of what is possible
+The pace is adequate to get a reasonably complete picture of what is possible
 I used Copilot to explore the basics.
 I made this cheat sheet after learning about its features because I want to use it in the future.
 
 ## Editor integration
 
-The terminal-based ecitors nano, neovim and terminal (emacs -nw) GNU Emacs have packages that support moving from the editor in one pane to other panes in a tmux window.
+The terminal-based editors nano, Neovim, and terminal (emacs -nw) GNU Emacs have packages that support moving from the editor in one pane to other panes in a tmux window.
 
 ## Requirements
 
@@ -46,7 +46,7 @@ The terminal-based ecitors nano, neovim and terminal (emacs -nw) GNU Emacs have 
 ## The hierarchy: sessions, windows, and panes.
 
 1. *Sessions* are at the same level as a terminal session. Each tab in iterm2 could be mapped to a different session. 
-2. A *Window* corresponds a terminal window or a single tab. Windows are numbered and can be renamed.
+2. A *Window* corresponds to a terminal window or a single tab. Windows are numbered and can be renamed.
 3. A *pane* corresponds to the panes of a split window. Panes can also be named. The terminal sessions in each pane are independent.
 
 ## Cheatsheet
