@@ -66,7 +66,7 @@ Start a tmux session by entering `tmux` at the prompt in the terminal.
 
 The prefix key, by default, is `Crtl + b`. 
 This is not Emacs friendly.
-I remapped this `C-z` in the configuration above because I rarely use it in Emacs.
+I remapped this `Cntrl-C` (or `C-z` in Emacs shorthand) in the configuration above because I rarely use it in Emacs.
 
 You enter `Ctrl + z c` to open up a new tmux window.
 The windows are numbered 0 onward.
