@@ -167,15 +167,18 @@ There will be no going back to a plain old terminal.
 ![10windowsWeather](https://github.com/user-attachments/assets/adca220d-cf5f-4399-bf3c-526673ac6d7e)
 
 The above image shows the application of a popular thematic tmux plugin, catppuccin.
-The highlighted tab corresponds to the current window.
-The ten tabs are for ten tmux windows opened in one session.
 The status bar had been moved to the top of the window.
+The ten xtmux tabs (one per tmux window) iniside one iterm2 tab are for ten tmux windows opened in one session.
+The highlighted tab corresponds to the current window.
+The four-digit numbers are at the heart of my project management system.
+
+
 The percentage by the heart is the charge of my failing battery.
+I am not sure what `offline` refers to.
 The temperature is the outside ambient air temperature.
 Presumably, the location updates as you move from city to city.
-The four digit numbers are my project numbers that facilitate my time management system.
 
-Ten windows in a iterm2 tab is the limit.
+Ten windows in an iterm2 tab is the limit.
 The numbering scheme is the default that starts from 0.
 This can be changed to start at one.
 Starting at one is more ergonomic.
@@ -195,7 +198,7 @@ You probably have a runaway session.
 Enter this command to kill all tmux servers: `tmux kill-servers` and try again with a clean slate.
 
 ## bashed-tmux  
-The repo [bashed-tmux]() has a bash script demonstrating how to automate the launching of about twenty customized tmux sessions in five tabs of iterm2 and the opening of several files, applications, and a webpage.
+The repo [bashed-tmux](https://github.com/MooersLab/tmux-bashed) has a bash script demonstrating how to automate the launching of about twenty customized tmux panes in five tabs of iterm2 and the opening of several files, applications, and a webpage.
 This can ease the start of your daily routine.
 
 
