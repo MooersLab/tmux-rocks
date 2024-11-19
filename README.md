@@ -5,10 +5,15 @@
 # tmux is easier than it looks
 
 Tmux is a terminal mutliplexer.
-It supports easier navigation between windows and splits a window into multiple panes.
+It supports easy navigation between windows and splits a window into multiple panes.
 It supports the foolish pursuit of multi-tasking.
 Your multipaned terminal window gives on-lookers the illusion that you know something about computers.
 A very attractive feature is that it is highly programmable using Bash.
+
+I have been aware of `tmux` since my Vim year before switching to Emacs several years ago. 
+`tmux` looked confusing to me at the time.
+It no longer is because Emacs mimics multiplexing with its support for easy splitting of buffers.
+As a result, I might have been better prepared to pick it up quite quickly.
 
 
 <img width="1711" alt="Screenshot 2024-11-12 at 4 42 51 AM" src="https://github.com/user-attachments/assets/c1bda3ed-2f25-4d84-9256-704d519afc79">
@@ -46,17 +51,18 @@ The terminal-based text editors nano, Neovim, and terminal (emacs -nw) GNU Emacs
 ## The hierarchy: sessions, windows, and panes.
 
 1. *Sessions* are at the same level as a terminal session. Each tab in iterm2 could be mapped to a different session. 
-2. A *Window* corresponds to a terminal window or a single tab. Windows are numbered and can be renamed.
+2. A *Window* corresponds to a terminal window or a single tab. Windows are numbered and can be renamed. Your single tab in iterm2 can be split into up to ten tmux windows.
 3. A *pane* corresponds to the panes of a split window. Panes can also be named. The terminal sessions in each pane are independent.
 
 ## Cheatsheet
 
 Start a tmux session by entering `tmux` at the prompt in the terminal.
 
-The prefix key, by default, is Crtl + B. This is not Emacs friendly.
-I remapped this C-z in the configuration above because I rarely use it in Emacs.
+The prefix key, by default, is `Crtl + b`. 
+This is not Emacs friendly.
+I remapped this `C-z` in the configuration above because I rarely use it in Emacs.
 
-You enter Ctrl + z c to open up a new tmux window.
+You enter `Ctrl + z c` to open up a new tmux window.
 The windows are numbered 0 onward.
 The numbered sessions are shown in a panel at the bottom of the terminal.
 
@@ -68,8 +74,8 @@ The above configuration enables the Shift key + right or left arrow to move betw
 
 A given terminal window can be split into panels.
 Each panel is like an independent terminal session but not numbered.
-To split the terminal vertically, enter Ctrl + z and then %.
-To split the terminal horizontally, enter Ctrl + z and then ".
+To split the terminal vertically, enter `Ctrl + z` and then `%`.
+To split the terminal horizontally, enter `Ctrl + z` and then `"`.
 
 To kill a pane, enter `Ctrl + z` and then `x`. 
 To kill a window, enter `Ctrl + z` and then `&`. 
@@ -95,9 +101,12 @@ printf '\033]2;%s\033\\' $1
 }
 ```
 
+## Session management
+
 `tmux ls` will list running sessions.
 `tmux attach` will bring a session to the foreground.
-
+`tmux attach-session <session-name>` will attach a specific session. 
+`tmux kill-servers` will kill all sessions.
 
 ## Enable Mouse Mode to click and drag the pane borders to resize them
 Add the following line to your `~/.tmux.conf` file to enable mouse support:
@@ -133,17 +142,18 @@ unbind r
 bind r source-file ~/.tmux.conf
 ```
 
-Enter C-z r to reload the .tmux.conf after editing it.
-
-
-
-
+Enter `C-z r` to reload the `~/.tmux.conf` file after editing it.
 
 If you have https://ohmyz.sh/ installed on macOS with the autocomplete plugin, the autocompletions work in tmux.
 Hit the right arrow to accept an autocompletion in the terminal.
 This makes navigation in the terminal faster than using the Finder.
 
-There are books about tmux, but this cheat sheet is a faster way to get started.
+## Getting help
+
+1. Enter `C-z ?` to get a list of current keybindings.
+2. Enter 'man tmux` to read the manual.
+3. There are books about tmux, but this cheat sheet is a faster way to get started.
+
 Your computer use will be transformed in an hour.
 There will be no going back to a plain old terminal.
 
