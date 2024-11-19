@@ -23,7 +23,7 @@ I made this cheat sheet after learning about its features because I want to use 
 
 ## Editor integration
 
-The terminal-based editors nano, Neovim, and terminal (emacs -nw) GNU Emacs have packages that support moving from the editor in one pane to other panes in a tmux window.
+The terminal-based text editors nano, Neovim, and terminal (emacs -nw) GNU Emacs have packages that support moving from the editor in one pane to other panes in a tmux window.
 
 ## Requirements
 
@@ -148,29 +148,40 @@ Your computer use will be transformed in an hour.
 There will be no going back to a plain old terminal.
 
 ## More advanced config
-![tenWindows](https://github.com/user-attachments/assets/31a35312-d54c-4dcf-b714-539fe8929d31)
+![tenWindows](https://github.com/user-attachments/assets/a2e33ef0-cd32-4398-be1e-57bd7d864f45)
 
-The thematic plugins are complex and do not alway work as expected.
-For example, the advanced-tmux.conf file is configurated to display the session name in the left end of the status bar.
+Shows the application of a popular thematic tmux plugin, catppuccin.
+The highlighted tab corresponds to the current window.
+The ten tabs are for ten tmux windows opened in one session.
+Ten is the limit for iterm2.
+The numbering scheme is the default that starts from 0.
+This can be changed to start at one.
+Starting at one is more ergonomic.
+A bash script mentioned below automated the creation of the windows.
+
+The thematic plugins are complex and do not always work as expected.
+For example, the `advanced-tmux.conf` (rename .tmux.conf) file is configured to display the session name in the left end of the status bar.
+It requires the installation of the tmux-plugin-manager.
 Instead, we get a smiley face.
-I thought I had installed all of the Nerd Font files; maybe I missed some.
-Enter C-z r to get a brief display of the session name.
+I thought I had installed all the Nerd Font files; maybe I overlooked several files.
+Enter `C-z r` to get a brief display of the session name while reloading the configuration file.
 
 ## Runaway sessions
-Some configs seem to persist despite edits to the `tmux.conf` file and its reloading.
-This can waste a lot of time during debugging.
+Some configs persist despite edits to the `tmux.conf` file and its reloading.
+This can save a lot of time during debugging.
 You probably have a runaway session.
 Enter this command to kill all tmux servers: `tmux kill-servers` and try again with a clean slate.
 
 ## bashed-tmux  
-This repo has a bash script that demostrates how to automate the lanuching of about twenty customized tmux sessions in five tabs of iterm2.
+The repo [bashed-tmux]() has a bash script demonstrating how to automate the launching of about twenty customized tmux sessions in five tabs of iterm2 and the opening of several files, applications, and a webpage.
+This can ease the start of your daily routine.
 
 
 |Version       |Changes                                                                                               |Date                  |
 |:-------------|:-----------------------------------------------------------------------------------------------------|:--------------------:|
 | Version 0.1  | Initiate project. Added badges, funding, and update table.                                           | 2024 November 12    |
 | Version 0.2  | Added tmux.conf. Changed the prefix key binding.                                                      | 2024 November 13    |
-| Version 0.3  | Added advanced-tmux.conf. Added blurb about rebinding r to ease reloading config. Added advanced image, | 2024 November 19    |
+| Version 0.3  | Added advanced-tmux.conf. Added blurb about rebinding r to ease reloading the config file. Added advanced image. | 2024 November 19    |
 
 ## Sources of funding
 
