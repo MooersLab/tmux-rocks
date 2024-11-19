@@ -112,7 +112,7 @@ tmux source-file ~/.tmux.conf
 ```
 This works very well!
 
-## Commands to ~/.tmux.conf to resize the pane without using the mouse.
+## Commands in ~/.tmux.conf to resize the pane without using the mouse
 
 Enter Alt (= Meta) and the arrow key repeatedly to change the size of the current pane.
 
@@ -123,6 +123,21 @@ bind -n M-Up resize-pane -U 5
 bind -n M-Down resize-pane -D 5
 ```
 
+## Command in ~/.tmux.conf to ease reloading the .tmux.conf file
+
+Add the following:
+
+```bash
+# rebind r to ease reloading the config file after editing it
+unbind r
+bind r source-file ~/.tmux.conf
+```
+
+Enter C-z r to reload the .tmux.conf after editing it.
+
+
+
+
 
 If you have https://ohmyz.sh/ installed on macOS with the autocomplete plugin, the autocompletions work in tmux.
 Hit the right arrow to accept an autocompletion in the terminal.
@@ -132,10 +147,30 @@ There are books about tmux, but this cheat sheet is a faster way to get started.
 Your computer use will be transformed in an hour.
 There will be no going back to a plain old terminal.
 
+## More advanced config
+![tenWindows](https://github.com/user-attachments/assets/31a35312-d54c-4dcf-b714-539fe8929d31)
+
+The thematic plugins are complex and do not alway work as expected.
+For example, the advanced-tmux.conf file is configurated to display the session name in the left end of the status bar.
+Instead, we get a smiley face.
+I thought I had installed all of the Nerd Font files; maybe I missed some.
+Enter C-z r to get a brief display of the session name.
+
+## Runaway sessions
+Some configs seem to persist despite edits to the `tmux.conf` file and its reloading.
+This can waste a lot of time during debugging.
+You probably have a runaway session.
+Enter this command to kill all tmux servers: `tmux kill-servers` and try again with a clean slate.
+
+## bashed-tmux  
+This repo has a bash script that demostrates how to automate the lanuching of about twenty customized tmux sessions in five tabs of iterm2.
+
+
 |Version       |Changes                                                                                               |Date                  |
 |:-------------|:-----------------------------------------------------------------------------------------------------|:--------------------:|
 | Version 0.1  | Initiate project. Added badges, funding, and update table.                                           | 2024 November 12    |
-| Version 0.2  | Added tmux.conf. Change the prefix key binding.                                                      | 2024 November 13    |
+| Version 0.2  | Added tmux.conf. Changed the prefix key binding.                                                      | 2024 November 13    |
+| Version 0.3  | Added advanced-tmux.conf. Added blurb about rebinding r to ease reloading config. Added advanced image, | 2024 November 19    |
 
 ## Sources of funding
 
