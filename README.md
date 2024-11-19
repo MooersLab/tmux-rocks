@@ -51,8 +51,14 @@ The terminal-based text editors nano, Neovim, and terminal (emacs -nw) GNU Emacs
 ## The hierarchy: sessions, windows, and panes.
 
 1. *Sessions* are at the same level as a terminal session. Each tab in iterm2 could be mapped to a different session. 
-2. A *Window* corresponds to a terminal window or a single tab. Windows are numbered and can be renamed. Your single tab in iterm2 can be split into up to ten tmux windows.
-3. A *pane* corresponds to the panes of a split window. Panes can also be named. The terminal sessions in each pane are independent.
+2. A *Window* corresponds to a terminal window or a single tab. Windows are numbered and can be renamed. Your single tab in iterm2 can be split into ten tmux windows.
+3. A *pane* corresponds to the panes of a split window. The numbering of panes starts at 0; this too can be reset. Panes can also be named. The terminal sessions in each pane are independent.
+
+The coordinates of a pane are <session-name>:#.# 
+The first pound sign is the number of the window. 
+This number can be substituted with the name of the window.
+The second pound sign is the number of the pane.
+Panes are only referred to by their number in this coordinate system.
 
 ## Cheatsheet
 
@@ -160,10 +166,16 @@ There will be no going back to a plain old terminal.
 ## More advanced config
 ![10windowsWeather](https://github.com/user-attachments/assets/adca220d-cf5f-4399-bf3c-526673ac6d7e)
 
-Shows the application of a popular thematic tmux plugin, catppuccin.
+The above image shows the application of a popular thematic tmux plugin, catppuccin.
 The highlighted tab corresponds to the current window.
 The ten tabs are for ten tmux windows opened in one session.
-Ten is the limit for iterm2.
+The status bar had been moved to the top of the window.
+The percentage by the heart is the charge of my failing battery.
+The temperature is the outside ambient air temperature.
+Presumably, the location updates as you move from city to city.
+The four digit numbers are my project numbers that facilitate my time management system.
+
+Ten windows in a iterm2 tab is the limit.
 The numbering scheme is the default that starts from 0.
 This can be changed to start at one.
 Starting at one is more ergonomic.
@@ -173,7 +185,7 @@ The thematic plugins are complex and do not always work as expected.
 For example, the `advanced-tmux.conf` (rename .tmux.conf) file is configured to display the session name in the left end of the status bar.
 It requires the installation of the tmux-plugin-manager.
 Instead, we get a smiley face.
-I thought I had installed all the Nerd Font files; maybe I overlooked several files.
+I thought I had installed all the Nerd Font files; maybe I overlooked several files of fonts.
 Enter `C-z r` to get a brief display of the session name while reloading the configuration file.
 
 ## Runaway sessions
