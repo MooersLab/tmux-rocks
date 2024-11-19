@@ -158,7 +158,7 @@ Your computer use will be transformed in an hour.
 There will be no going back to a plain old terminal.
 
 ## More advanced config
-![tenWindows](https://github.com/user-attachments/assets/a2e33ef0-cd32-4398-be1e-57bd7d864f45)
+![10windowsWeather](https://github.com/user-attachments/assets/adca220d-cf5f-4399-bf3c-526673ac6d7e)
 
 Shows the application of a popular thematic tmux plugin, catppuccin.
 The highlighted tab corresponds to the current window.
