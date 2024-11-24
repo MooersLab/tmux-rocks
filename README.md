@@ -22,15 +22,9 @@ I can see how splitting a terminal horizontally and vertically into several pane
 In one pane, you could monitor running jobs, while in another, you could edit a script file to prepare the next job or an unrelated job.
 
 Watch this 3-minute video [video](https://www.youtube.com/watch?v=vtB1J_zCv8I) to understand what is possible.
-The pace is adequate to get a reasonably complete picture of what is possible
+The pace is adequate to get a reasonably complete picture of what is possible.
 I used Copilot to explore the basics.
 I made this cheat sheet after learning about the features of this plugin because I want to use it in the future.
-
-## Editor integration
-
-The terminal-based text editors nano, Neovim, and terminal (emacs -nw) GNU Emacs have packages that support moving from the editor in one pane to other panes in a tmux window.
-
-![EmacsSchooner](https://github.com/user-attachments/assets/18655a3a-8b92-4824-bf82-4f715a3fa880)
 
 ## Requirements
 
