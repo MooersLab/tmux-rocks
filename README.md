@@ -195,10 +195,12 @@ Enter this command to kill all tmux servers: `tmux kill-server` and try again wi
 ## Moving between tmux panes and text editor panes
 
 Nano, vi, Vim, Neovim, and Emacs (-nw option) run in the terminal.
-Plugins on the tmux side and the editor side are required to switch seamlessly between the tmux and editor panes.
-For example, the Emacs [tmux-pane package](https://github.com/laishulu/emacs-tmux-pane) enables jumping from the Emacs session in the top tmux pane below to the remote session on the schooner supercomputer in the tmux pane in the figure below by entering C + j.
+Plugins on the tmux side and the editor side are required to switch seamlessly between a pane running a terminal session and a pane occupied by an editor session.
+For example, the Emacs [tmux-pane package](https://github.com/laishulu/emacs-tmux-pane) enables jumping from the Emacs session in the top tmux pane below to the remote session on the schooner supercomputer in the tmux pane in the figure below by entering C + j (C-j in Emacs convention) or vice versa with C-k.
+
 The boundary between the two panes in the image below is the thin gray line.
-The top pane was enlarged at th
+The top pane with the Emacs session was enlarged in height compared to the terminal session in the pane at the bottom.
+The enlargement was made by clicking on the boundary line and dragging it downward with the mouse.
 
 ![EmacsSchooner](https://github.com/user-attachments/assets/73035254-ef05-49af-8903-27c74c579d78)
 
