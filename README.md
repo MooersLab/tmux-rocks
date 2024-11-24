@@ -24,11 +24,13 @@ In one pane, you could monitor running jobs, while in another, you could edit a 
 Watch this 3-minute video [video](https://www.youtube.com/watch?v=vtB1J_zCv8I) to understand what is possible.
 The pace is adequate to get a reasonably complete picture of what is possible
 I used Copilot to explore the basics.
-I made this cheat sheet after learning about its features because I want to use it in the future.
+I made this cheat sheet after learning about the features of this plugin because I want to use it in the future.
 
 ## Editor integration
 
 The terminal-based text editors nano, Neovim, and terminal (emacs -nw) GNU Emacs have packages that support moving from the editor in one pane to other panes in a tmux window.
+
+![EmacsSchooner](https://github.com/user-attachments/assets/18655a3a-8b92-4824-bf82-4f715a3fa880)
 
 ## Requirements
 
@@ -55,10 +57,10 @@ The terminal-based text editors nano, Neovim, and terminal (emacs -nw) GNU Emacs
 3. A *pane* corresponds to the panes of a split window. The numbering of panes starts at 0; this too can be reset. Panes can also be named. The terminal sessions in each pane are independent.
 
 The coordinates of a pane are <session-name>:#.# 
-The first pound sign is the number of the window. 
+The first pound sign is the index number of the window. 
 This number can be substituted with the name of the window.
-The second pound sign is the number of the pane.
-Panes are only referred to by their number in this coordinate system.
+The second pound sign is the index number of the pane.
+Only panes are referred to by their number in this coordinate system.
 
 ## Cheatsheet
 
@@ -168,7 +170,7 @@ There will be no going back to a plain old terminal.
 
 The above image shows the application of a popular thematic tmux plugin, catppuccin.
 The status bar had been moved to the top of the window.
-The ten xtmux tabs (one per tmux window) iniside one iterm2 tab are for ten tmux windows opened in one session.
+The ten xtmux tabs (one per tmux window) inside one iterm2 tab represent ten tmux windows opened in one session.
 The highlighted tab corresponds to the current window.
 The four-digit numbers are at the heart of my project management system.
 
@@ -186,9 +188,9 @@ A bash script mentioned below automated the creation of the windows.
 
 The thematic plugins are complex and do not always work as expected.
 For example, the `advanced-tmux.conf` (rename .tmux.conf) file is configured to display the session name in the left end of the status bar.
-It requires the installation of the tmux-plugin-manager.
+It requires the installation of the t`mux-plugin-manager`.
 Instead, we get a smiley face.
-I thought I had installed all the Nerd Font files; maybe I overlooked several files of fonts.
+I thought I had installed all the Nerd Font files.
 Enter `C-z r` to get a brief display of the session name while reloading the configuration file.
 
 ## Runaway sessions
@@ -198,7 +200,7 @@ Enter this command to kill all tmux servers: `tmux kill-server` and try again wi
 
 ## Moving between tmux panes and text editor panes
 
-Nona, vi, vim, neovim, and emacs (-nw option) run in the terminal.
+Nano, vi, Vim, Neovim, and Emacs (-nw option) run in the terminal.
 Plugins on the tmux side and the editor side are required to switch seamlessly between the tmux and editor panes.
 For example, the Emacs [tmux-pane package](https://github.com/laishulu/emacs-tmux-pane) enables jumping from the Emacs session in the top tmux pane below to the remote session on the schooner supercomputer in the tmux pane in the figure below by entering C + j.
 The boundary between the two panes in the image below is the thin gray line.
@@ -223,6 +225,3 @@ This can ease the start of your daily routine after you have customized this tem
 - NIH: R01 AI088011
 - NIH: P30 CA225520 (PI: R. Mannel)
 - NIH: P20 GM103640 and P30 GM145423 (PI: A. West)
-
-
-
