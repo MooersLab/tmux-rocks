@@ -193,13 +193,20 @@ Enter `C-z r` to get a brief display of the session name while reloading the con
 
 ## Runaway sessions
 Some configs persist despite edits to the `tmux.conf` file and its reloading.
-This can save a lot of time during debugging.
 You probably have a runaway session.
-Enter this command to kill all tmux servers: `tmux kill-servers` and try again with a clean slate.
+Enter this command to kill all tmux servers: `tmux kill-server` and try again with a clean slate.
+
+## Moving between tmux panes and text editor panes
+
+Nona, vi, vim, neovim, and emacs (-nw option) run in the terminal.
+Plugins on the tmux side and the editor side are required to switch seamlessly between the tmux and editor panes.
+For example, the Emacs [tmux-pane package](https://github.com/laishulu/emacs-tmux-pane) enables jumping from the Emacs session in the top tmux pane below to the remote session on the schooner supercomputer in the tmux pane in the figure below by entering C-j.
+
+![EmacsSchooner](https://github.com/user-attachments/assets/73035254-ef05-49af-8903-27c74c579d78)
 
 ## bashed-tmux  
 The repo [bashed-tmux](https://github.com/MooersLab/tmux-bashed) has a bash script demonstrating how to automate the launching of about twenty customized tmux panes in five tabs of iterm2 and the opening of several files, applications, and a webpage.
-This can ease the start of your daily routine.
+This can ease the start of your daily routine after you have customized this template file.
 
 
 |Version       |Changes                                                                                               |Date                  |
