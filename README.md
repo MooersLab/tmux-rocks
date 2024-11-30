@@ -4,9 +4,9 @@
 
 # tmux is easier than it looks
 
-Tmux is a terminal mutliplexer.
-It supports easy navigation between windows and splits a window into multiple panes.
-It supports the foolish pursuit of multi-tasking.
+Tmux is a terminal multiplexer.
+(If you use iterm2, it too supports terminal multiplexing. See [Mac OS Terminal Tips with iTerm2](https://www.youtube.com/watch?v=LcelO7XErdA). Regardless, this six-minute video is worth watching; it also revealed a number of bash functions that I did not know about.)
+Tmux supports easy navigation between windows and splits a window into multiple panes.
 Your multipaned terminal window gives on-lookers the illusion that you know something about computers.
 A very attractive feature is that it is highly programmable using Bash.
 
@@ -164,7 +164,7 @@ There will be no going back to a plain old terminal.
 
 The above image shows the application of a popular thematic tmux plugin, catppuccin.
 The status bar had been moved to the top of the window.
-The ten xtmux tabs (one per tmux window) inside one iterm2 tab represent ten tmux windows opened in one session.
+The ten tmux tabs (one per tmux window) inside one iterm2 tab represent ten tmux windows opened in one session.
 The highlighted tab corresponds to the current window.
 The four-digit numbers are at the heart of my project management system.
 
@@ -208,12 +208,73 @@ The enlargement was made by clicking on the boundary line and dragging it downwa
 The repo [bashed-tmux](https://github.com/MooersLab/tmux-bashed) has a bash script demonstrating how to automate the launching of about twenty customized tmux panes in five tabs of iterm2 and the opening of several files, applications, and a webpage.
 This can ease the start of your daily routine after you have customized this template file.
 
+## Tab titles
+The default tab title in iterm2 will be tmux. If you have ten iterm2 tabs open, this row of `tmux` is not helpful.
+After pasting the following code in your .zshrc file, you can change the title of a iterm2 tab by entering `tt`. 
+
+```zsh
+DISABLE_AUTO_TITLE="true"
+tt () {
+    echo -e "\033];$@\007"
+}
+```
+
+Now the bash script mentioned above can be modified to name iterm tabs.
+
+## Coloring the iterm2 tabs
+
+Coloring the iterm2 tab can also enhance your identification of the tab of interest.
+The following code assigns a random color for the tab each time a new tab is opened.
+Add this code to your zshrc file.
+
+```zsh
+# randomly color new tabs.
+PRELINE="\r\033[A"
+
+function random {
+    echo -e "\033]6;1;bg;red;brightness;$((1 + $RANDOM % 255))\a"$PRELINE
+    echo -e "\033]6;1;bg;green;brightness;$((1 + $RANDOM % 255))\a"$PRELINE
+    echo -e "\033]6;1;bg;blue;brightness;$((1 + $RANDOM % 255))\a"$PRELINE
+}
+
+function color {
+    case $1 in
+    green)
+    echo -e "\033]6;1;bg;red;brightness;57\a"$PRELINE
+    echo -e "\033]6;1;bg;green;brightness;197\a"$PRELINE
+    echo -e "\033]6;1;bg;blue;brightness;77\a"$PRELINE
+    ;;
+    red)
+    echo -e "\033]6;1;bg;red;brightness;270\a"$PRELINE
+    echo -e "\033]6;1;bg;green;brightness;60\a"$PRELINE
+    echo -e "\033]6;1;bg;blue;brightness;83\a"$PRELINE
+    ;;
+    orange)
+    echo -e "\033]6;1;bg;red;brightness;227\a"$PRELINE
+    echo -e "\033]6;1;bg;green;brightness;143\a"$PRELINE
+    echo -e "\033]6;1;bg;blue;brightness;10\a"$PRELINE
+    ;;
+    *)
+    random
+    esac
+}
+
+color
+```
+
+With `tt` and random coloring enabled, my iterm terminal appears in the figure below.
+The tabs labeled zsh are not tmux sessions, or they were intended tmux session,
+but a bug in the script failed to launch a tmux session in the iterm2 tab.
+
+<img width="1363" alt="Screenshot 2024-11-30 at 8 12 46 AM" src="https://github.com/user-attachments/assets/569a5ba2-bc12-4d54-80bb-867f6b3fe76e">
+
 
 |Version       |Changes                                                                                               |Date                  |
 |:-------------|:-----------------------------------------------------------------------------------------------------|:--------------------:|
 | Version 0.1  | Initiate project. Added badges, funding, and update table.                                           | 2024 November 12    |
 | Version 0.2  | Added tmux.conf. Changed the prefix key binding.                                                      | 2024 November 13    |
 | Version 0.3  | Added advanced-tmux.conf. Added blurb about rebinding r to ease reloading the config file. Added advanced image. | 2024 November 19    |
+| Version 0.4  | Added notes about multiplexing in iterm2, tab titles, and tab coloring.                                |2024 November 30   |
 
 ## Sources of funding
 
