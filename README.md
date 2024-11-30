@@ -263,8 +263,8 @@ color
 ```
 
 With `tt` and random coloring enabled, my iterm terminal appears in the figure below.
-The tabs labeled zsh are not tmux sessions, or they were intended tmux session,
-but a bug in the script failed to launch a tmux session in the iterm2 tab.
+The tabs labeled zsh are not tmux sessions, or they were intended tmux sessions,
+but a bug in my bash function failed to launch a tmux session in the iterm2 tab.
 
 <img width="1363" alt="Screenshot 2024-11-30 at 8 12 46 AM" src="https://github.com/user-attachments/assets/569a5ba2-bc12-4d54-80bb-867f6b3fe76e">
 
