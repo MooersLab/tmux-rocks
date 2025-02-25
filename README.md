@@ -62,7 +62,7 @@ Start a tmux session by entering `tmux` at the prompt in the terminal.
 
 The prefix key, by default, is `Crtl + b`. 
 This is not Emacs friendly.
-I remapped this `Cntrl-C` (or `C-z` in Emacs shorthand) in the configuration above because I rarely use it in Emacs.
+I remapped this `Contrl-z` (or `C-z` in Emacs shorthand) in the configuration above because I rarely use `C-z` in Emacs.
 
 You enter `Ctrl + z c` to open up a new tmux window.
 The windows are numbered 0 onward.
@@ -210,7 +210,7 @@ This can ease the start of your daily routine after you have customized this tem
 
 ## Tab titles
 The default tab title in iterm2 will be tmux. If you have ten iterm2 tabs open, this row of `tmux` is not helpful.
-After pasting the following code in your .zshrc file, you can change the title of a iterm2 tab by entering `tt`. 
+After pasting the following code in your .zshrc file, you can change the title of an iterm2 tab by entering `tt`. 
 
 ```zsh
 DISABLE_AUTO_TITLE="true"
@@ -219,7 +219,7 @@ tt () {
 }
 ```
 
-Now the bash script mentioned above can be modified to name iterm tabs.
+Now, the bash script mentioned above can be modified to name iTerm tabs.
 
 ## Coloring the iterm2 tabs
 
@@ -275,6 +275,7 @@ but a bug in my bash function failed to launch a tmux session in the iterm2 tab.
 | Version 0.2  | Added tmux.conf. Changed the prefix key binding.                                                      | 2024 November 13    |
 | Version 0.3  | Added advanced-tmux.conf. Added blurb about rebinding r to ease reloading the config file. Added advanced image. | 2024 November 19    |
 | Version 0.4  | Added notes about multiplexing in iterm2, tab titles, and tab coloring.                                |2024 November 30   |
+| Version 0.4  | Fixed some typos.                                                                                     |2025 February 25   |
 
 ## Sources of funding
 
