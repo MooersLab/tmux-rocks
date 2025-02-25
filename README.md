@@ -5,10 +5,11 @@
 # tmux is easier than it looks
 
 Tmux is a terminal multiplexer.
-(If you use iterm2, it too supports terminal multiplexing. See [Mac OS Terminal Tips with iTerm2](https://www.youtube.com/watch?v=LcelO7XErdA). Regardless, this six-minute video is worth watching; it also revealed a number of bash functions that I did not know about.)
+(If you use *iTerm2*, it also supports terminal multiplexing. See [Mac OS Terminal Tips with *iTerm2*](https://www.youtube.com/watch?v=LcelO7XErdA). 
+Regardless, this six-minute video is worth watching; it also revealed some bash functions I did not know about.)
 Tmux supports easy navigation between windows and splits a window into multiple panes.
 Your multipaned terminal window gives on-lookers the illusion that you know something about computers.
-A very attractive feature is that it is highly programmable using Bash.
+A desirable feature is that it is highly programmable using Bash.
 
 I have been aware of `tmux` since my Vim year before switching to Emacs several years ago. 
 `tmux` looked confusing to me at the time.
@@ -19,10 +20,10 @@ As a result, I might have been better prepared to pick it up quite quickly.
 <img width="1711" alt="Screenshot 2024-11-12 at 4 42 51 AM" src="https://github.com/user-attachments/assets/c1bda3ed-2f25-4d84-9256-704d519afc79">
 
 I can see how splitting a terminal horizontally and vertically into several panes can be very useful when working on a remote computer.
-In one pane, you could monitor running jobs, while in another, you could edit a script file to prepare the next job or an unrelated job.
+In one pane, you could monitor running jobs; in another, you could edit a script file to prepare the next job or an unrelated job.
 
 Watch this 3-minute video [video](https://www.youtube.com/watch?v=vtB1J_zCv8I) to understand what is possible.
-The pace is adequate to get a reasonably complete picture of what is possible.
+The pace is adequate to get a complete picture of what is possible.
 I used Copilot to explore the basics.
 I made this cheat sheet after learning about the features of this plugin because I want to use it in the future.
 
@@ -46,14 +47,14 @@ I made this cheat sheet after learning about the features of this plugin because
 
 ## The hierarchy: sessions, windows, and panes.
 
-1. *Sessions* are at the same level as a terminal session. Each tab in iterm2 could be mapped to a different session. 
-2. A *Window* corresponds to a terminal window or a single tab. Windows are numbered and can be renamed. Your single tab in iterm2 can be split into ten tmux windows.
-3. A *pane* corresponds to the panes of a split window. The numbering of panes starts at 0; this too can be reset. Panes can also be named. The terminal sessions in each pane are independent.
+1. *Sessions* are at the same level as a terminal session. Each tab in *iTerm2* could be mapped to a different session. 
+2. A *Window* corresponds to a terminal window or a single tab. Windows are numbered and can be renamed. Your single tab in *iTerm2* can be split into ten tmux windows.
+3. A *pane* corresponds to the panes of a split window. The numbering of panes starts at 0; this, too, can be reset. Panes can also be named. The terminal sessions in each pane are independent.
 
 The coordinates of a pane are <session-name>:#.# 
-The first pound sign is the index number of the window. 
+The first hashmark is the index number of the window. 
 This number can be substituted with the name of the window.
-The second pound sign is the index number of the pane.
+The second hashmark sign is the index number of the pane.
 Only panes are referred to by their number in this coordinate system.
 
 ## Cheatsheet
@@ -64,7 +65,7 @@ The prefix key, by default, is `Crtl + b`.
 This is not Emacs friendly.
 I remapped this `Contrl-z` (or `C-z` in Emacs shorthand) in the configuration above because I rarely use `C-z` in Emacs.
 
-You enter `Ctrl + z c` to open up a new tmux window.
+You enter `Ctrl + z c` to open a new tmux window.
 The windows are numbered 0 onward.
 The numbered sessions are shown in a panel at the bottom of the terminal.
 
@@ -82,14 +83,14 @@ To split the terminal horizontally, enter `Ctrl + z` and then `"`.
 To kill a pane, enter `Ctrl + z` and then `x`. 
 To kill a window, enter `Ctrl + z` and then `&`. 
 
-To rename a window, enter `Ctrl + z` and comma.
+To rename a window, enter `Ctrl + z` and a comma.
 To rename a pane, enter `printf '\033]2;%s\033\\' "My Pane"`
 I made this into a bash function that takes the pane name as an argument.
 This bash function works (easy-peasy):
 
 ```bash
 function namePane {
-echo "Name a tmux pane. Takes the name as a string in double quotes."
+echo "Name a tmux pane. Takes the name as a string in double-quotes."
 if [ $# -lt 1 ]; then
   echo 1>&2 "$0: not enough arguments"
   echo 'Usage1: namePane "My Pane"'
@@ -164,7 +165,7 @@ There will be no going back to a plain old terminal.
 
 The above image shows the application of a popular thematic tmux plugin, catppuccin.
 The status bar had been moved to the top of the window.
-The ten tmux tabs (one per tmux window) inside one iterm2 tab represent ten tmux windows opened in one session.
+The ten tmux tabs (one per tmux window) inside one *iTerm2* tab represent ten tmux windows opened in one session.
 The highlighted tab corresponds to the current window.
 The four-digit numbers are at the heart of my project management system.
 
@@ -174,7 +175,7 @@ I am not sure what `offline` refers to.
 The temperature is the outside ambient air temperature.
 Presumably, the location updates as you move from city to city.
 
-Ten windows in an iterm2 tab is the limit.
+Ten windows in an *iTerm2* tab is the limit.
 The numbering scheme is the default that starts from 0.
 This can be changed to start at one.
 Starting at one is more ergonomic.
@@ -198,19 +199,19 @@ Nano, vi, Vim, Neovim, and Emacs (-nw option) run in the terminal.
 Plugins on the tmux side and the editor side are required to switch seamlessly between a pane running a terminal session and a pane occupied by an editor session.
 For example, the Emacs [tmux-pane package](https://github.com/laishulu/emacs-tmux-pane) enables jumping from the Emacs session in the top tmux pane below to the remote session on the schooner supercomputer in the tmux pane in the figure below by entering C + j (C-j in Emacs convention) or vice versa with C-k.
 
-The boundary between the two panes in the image below is the thin gray line.
+The thin gray line is the boundary between the two panes in the image below.
 The top pane with the Emacs session was enlarged in height compared to the terminal session in the pane at the bottom.
 The enlargement was made by clicking on the boundary line and dragging it downward with the mouse.
 
 ![EmacsSchooner](https://github.com/user-attachments/assets/73035254-ef05-49af-8903-27c74c579d78)
 
 ## bashed-tmux  
-The repo [bashed-tmux](https://github.com/MooersLab/tmux-bashed) has a bash script demonstrating how to automate the launching of about twenty customized tmux panes in five tabs of iterm2 and the opening of several files, applications, and a webpage.
+The repo [bashed-tmux](https://github.com/MooersLab/tmux-bashed) has a bash script demonstrating how to automate the launching of about twenty customized tmux panes in five tabs of *iTerm2* and the opening of several files, applications, and a webpage.
 This can ease the start of your daily routine after you have customized this template file.
 
 ## Tab titles
-The default tab title in iterm2 will be tmux. If you have ten iterm2 tabs open, this row of `tmux` is not helpful.
-After pasting the following code in your .zshrc file, you can change the title of an iterm2 tab by entering `tt`. 
+The default tab title in *iTerm2* will be tmux. If you have ten *iTerm2* tabs open, this row of `tmux` is not helpful.
+After pasting the following code in your .zshrc file, you can change the title of an *iTerm2* tab by entering `tt`. 
 
 ```zsh
 DISABLE_AUTO_TITLE="true"
@@ -219,11 +220,11 @@ tt () {
 }
 ```
 
-Now, the bash script mentioned above can be modified to name iTerm tabs.
+Now, the bash script mentioned above can be modified to name *iTerm2* tabs.
 
-## Coloring the iterm2 tabs
+## Coloring the *iTerm2* tabs
 
-Coloring the iterm2 tab can also enhance your identification of the tab of interest.
+Coloring the *iTerm2* tab can also enhance your identification of the tab of interest.
 The following code assigns a random color for the tab each time a new tab is opened.
 Add this code to your zshrc file.
 
@@ -262,9 +263,9 @@ function color {
 color
 ```
 
-With `tt` and random coloring enabled, my iterm terminal appears in the figure below.
-The tabs labeled zsh are not tmux sessions, or they were intended tmux sessions,
-but a bug in my bash function failed to launch a tmux session in the iterm2 tab.
+With `tt` and random coloring enabled, my *iTerm2* terminal appears in the figure below.
+The tabs labeled zsh are not tmux sessions or were intended tmux sessions,
+but a bug in my bash function failed to launch a tmux session in the *iTerm2* tab.
 
 <img width="1363" alt="Screenshot 2024-11-30 at 8 12 46 AM" src="https://github.com/user-attachments/assets/569a5ba2-bc12-4d54-80bb-867f6b3fe76e">
 
@@ -274,7 +275,7 @@ but a bug in my bash function failed to launch a tmux session in the iterm2 tab.
 | Version 0.1  | Initiate project. Added badges, funding, and update table.                                           | 2024 November 12    |
 | Version 0.2  | Added tmux.conf. Changed the prefix key binding.                                                      | 2024 November 13    |
 | Version 0.3  | Added advanced-tmux.conf. Added blurb about rebinding r to ease reloading the config file. Added advanced image. | 2024 November 19    |
-| Version 0.4  | Added notes about multiplexing in iterm2, tab titles, and tab coloring.                                |2024 November 30   |
+| Version 0.4  | Added notes about multiplexing in *iTerm2*, tab titles, and tab coloring.                                |2024 November 30   |
 | Version 0.4  | Fixed some typos.                                                                                     |2025 February 25   |
 
 ## Sources of funding
